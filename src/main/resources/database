@@ -1,0 +1,54 @@
+# tables in mysql database
+# ========================
+create database db;
+use db;
+create table admin(
+    id varchar(10) primary key,
+    name varchar(50),
+    email varchar(50),
+    position varchar(20) default 'an_admin',
+    contact int(10)
+);
+create table customer(
+    id varchar(10) primary key,
+    name varchar(100),
+    address varchar(100),
+    position varchar(20) default 'a_customer',
+    contact int(10)
+);
+create table category(
+    id varchar(10) primary key,
+    description varchar(50)
+);
+create table product(
+    id varchar(10) primary key,
+    categoryId varchar(10),
+    description varchar(150),
+    unitPrice decimal(10,2),
+    qtyOnHand int(5),
+    foreign key(categoryId) references category(id) on update cascade on delete cascade
+);
+create table cart(
+    id varchar(10) primary key,
+    customerId varchar(10),
+    productId varchar(10),
+    foreign key(productId) references product(id) on update cascade on delete cascade,
+    foreign key(customerId) references customer(id) on update cascade on delete cascade
+);
+create table orders(
+    id varchar(10) primary key,
+    adminId varchar(10),
+    customerId varchar(10),
+    cartId varchar(10),
+    date date,
+    foreign key(cartId) references cart(id) on update cascade on delete cascade,
+    foreign key(adminId) references admin(id) on update cascade on delete cascade,
+    foreign key(customerId) references customer(id) on update cascade on delete cascade
+);
+create table orderDetail(
+    id varchar(10) primary key,
+    orderId varchar(10),
+    productId varchar(10),
+    foreign key(orderId) references orders(id) on update cascade on delete cascade,
+    foreign key(productId) references product(id) on update cascade on delete cascade
+);
