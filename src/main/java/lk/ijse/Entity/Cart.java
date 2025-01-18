@@ -21,6 +21,7 @@ import lombok.NoArgsConstructor;
 public class Cart {
     @Id
     private String id;
+
     private String customerId;
     private String productId;
 }

@@ -1,4 +1,4 @@
-package lk.ijse;
+package lk.ijse.Listner;
 
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
@@ -13,7 +13,7 @@ import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
  */
 
 @WebListener
-public class PoolListner implements ServletContextListener {
+public class Pool implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {

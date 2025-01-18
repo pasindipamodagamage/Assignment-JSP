@@ -19,4 +19,5 @@ public class CustomerDTO {
     private String address;
     private String position;
     private String contact;
+    private String active;
 }

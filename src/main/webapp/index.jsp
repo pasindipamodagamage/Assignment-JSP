@@ -1,60 +1,66 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CYBER ASSIST - Computer Hardware Solutions</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
+    <title>PawMart - Your Pet's Favorite Store</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <style>
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-            url('https://images.unsplash.com/photo-1587831990711-23ca6441447b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url('/api/placeholder/1920/600') center/cover;
+            height: 60vh;
             color: white;
-            padding: 100px 0;
-        }
-
-        .feature-card {
-            transition: transform 0.3s;
-            margin-bottom: 20px;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
         }
 
         .category-card {
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
             transition: transform 0.3s;
         }
 
         .category-card:hover {
-            transform: scale(1.03);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #FF6B6B;
         }
 
         .navbar-brand {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: bold;
-            color: #0d6efd !important;
+            color: #FF6B6B !important;
+        }
+
+        .modal-header {
+            background-color: #FF6B6B;
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: #FF6B6B;
+            border-color: #FF6B6B;
+        }
+
+        .btn-primary:hover {
+            background-color: #FF5252;
+            border-color: #FF5252;
         }
     </style>
 </head>
 <body>
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="#">CYBER ASSIST</a>
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-paw me-2"></i>PawMart
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav me-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Home</a>
                 </li>
@@ -67,58 +73,58 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="btn btn-primary ms-2" href="#">Login</a>
-                </li>
             </ul>
+            <div class="d-flex">
+                <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+            </div>
         </div>
     </div>
 </nav>
 
 <!-- Hero Section -->
-<section class="hero-section">
+<section class="hero-section d-flex align-items-center">
     <div class="container text-center">
-        <h1 class="display-4 mb-4">Welcome to CYBER ASSIST</h1>
-        <p class="lead mb-4">Your One-Stop Shop for Premium Computer Hardware</p>
-        <div class="d-flex justify-content-center gap-3">
-            <a href="#" class="btn btn-primary btn-lg">Shop Now</a>
-            <a href="#" class="btn btn-outline-light btn-lg">Learn More</a>
-        </div>
+        <h1 class="display-4 mb-4">Welcome to PawMart</h1>
+        <p class="lead mb-4">Your one-stop shop for all your pet's needs</p>
+        <button class="btn btn-primary btn-lg">Shop Now</button>
     </div>
 </section>
 
-<!-- Featured Categories -->
+<!-- Categories Section -->
 <section class="py-5">
     <div class="container">
-        <h2 class="text-center mb-5">Popular Categories</h2>
-        <div class="row">
-            <div class="col-md-4">
+        <h2 class="text-center mb-4">Shop by Category</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
                 <div class="card category-card">
-                    <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Processors">
+                    <img src="/api/placeholder/300/200" class="card-img-top" alt="Food">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Processors</h5>
-                        <a href="#" class="btn btn-outline-primary">View All</a>
+                        <h5 class="card-title">Pet Food</h5>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="card category-card">
-                    <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Graphics Cards">
+                    <img src="/api/placeholder/300/200" class="card-img-top" alt="Toys">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Graphics Cards</h5>
-                        <a href="#" class="btn btn-outline-primary">View All</a>
+                        <h5 class="card-title">Toys</h5>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="card category-card">
-                    <img src="https://images.unsplash.com/photo-1562976540-1502c2145186?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Storage">
+                    <img src="/api/placeholder/300/200" class="card-img-top" alt="Accessories">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Storage Devices</h5>
-                        <a href="#" class="btn btn-outline-primary">View All</a>
+                        <h5 class="card-title">Accessories</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card category-card">
+                    <img src="/api/placeholder/300/200" class="card-img-top" alt="Health">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Health & Wellness</h5>
                     </div>
                 </div>
             </div>
@@ -129,75 +135,117 @@
 <!-- Features Section -->
 <section class="bg-light py-5">
     <div class="container">
-        <h2 class="text-center mb-5">Why Choose Us</h2>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card feature-card h-100 border-0 text-center">
-                    <div class="card-body">
-                        <i class="fas fa-shipping-fast fa-3x text-primary mb-3"></i>
-                        <h5 class="card-title">Fast Shipping</h5>
-                        <p class="card-text">Quick delivery to your doorstep</p>
-                    </div>
-                </div>
+        <div class="row g-4">
+            <div class="col-md-4 text-center">
+                <i class="fas fa-truck feature-icon mb-3"></i>
+                <h4>Free Shipping</h4>
+                <p>On orders over $50</p>
             </div>
-            <div class="col-md-3">
-                <div class="card feature-card h-100 border-0 text-center">
-                    <div class="card-body">
-                        <i class="fas fa-user-shield fa-3x text-primary mb-3"></i>
-                        <h5 class="card-title">Secure Shopping</h5>
-                        <p class="card-text">Your security is our priority</p>
-                    </div>
-                </div>
+            <div class="col-md-4 text-center">
+                <i class="fas fa-headset feature-icon mb-3"></i>
+                <h4>24/7 Support</h4>
+                <p>Expert pet care advice</p>
             </div>
-            <div class="col-md-3">
-                <div class="card feature-card h-100 border-0 text-center">
-                    <div class="card-body">
-                        <i class="fas fa-headset fa-3x text-primary mb-3"></i>
-                        <h5 class="card-title">24/7 Support</h5>
-                        <p class="card-text">Always here to help you</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card feature-card h-100 border-0 text-center">
-                    <div class="card-body">
-                        <i class="fas fa-undo fa-3x text-primary mb-3"></i>
-                        <h5 class="card-title">Easy Returns</h5>
-                        <p class="card-text">30-day return policy</p>
-                    </div>
-                </div>
+            <div class="col-md-4 text-center">
+                <i class="fas fa-undo feature-icon mb-3"></i>
+                <h4>Easy Returns</h4>
+                <p>30-day return policy</p>
             </div>
         </div>
     </div>
 </section>
 
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Login to PawMart</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form action="login" method="POST">
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="loginEmail" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" name="password" required>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Register Modal -->
+<div class="modal fade" id="registerModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create an Account</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form action="register" method="POST">
+                    <div class="mb-3">
+                        <label for="registerName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="registerName" name="fullName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="registerEmail" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="registerPassword" name="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Footer -->
-<footer class="bg-dark text-light py-4">
+<footer class="bg-dark text-light py-4 mt-5">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <h5>CYBER ASSIST</h5>
-                <p>Your trusted partner for computer hardware solutions.</p>
+                <h5>About PawMart</h5>
+                <p>Your trusted source for premium pet supplies and accessories.</p>
             </div>
             <div class="col-md-4">
                 <h5>Quick Links</h5>
                 <ul class="list-unstyled">
                     <li><a href="#" class="text-light">About Us</a></li>
-                    <li><a href="#" class="text-light">Products</a></li>
                     <li><a href="#" class="text-light">Contact</a></li>
+                    <li><a href="#" class="text-light">Privacy Policy</a></li>
+                    <li><a href="#" class="text-light">Terms of Service</a></li>
                 </ul>
             </div>
             <div class="col-md-4">
-                <h5>Contact Us</h5>
-                <p>Email: info@cyberassist.com<br>
-                    Phone: (555) 123-4567</p>
+                <h5>Connect With Us</h5>
+                <div class="d-flex gap-3">
+                    <a href="#" class="text-light"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-twitter fa-lg"></i></a>
+                </div>
             </div>
         </div>
     </div>
 </footer>
 
-<!-- Bootstrap JS and Font Awesome -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

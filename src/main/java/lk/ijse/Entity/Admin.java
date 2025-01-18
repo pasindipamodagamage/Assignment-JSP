@@ -26,6 +26,6 @@ public class Admin {
     private String id;
     private String name;
     private String email;
-    private String position;
+    private String position="Default admin";
     private String contact;
 }
