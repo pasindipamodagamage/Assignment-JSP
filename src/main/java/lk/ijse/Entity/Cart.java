@@ -1,5 +1,8 @@
 package lk.ijse.Entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +16,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Entity
+@Table(name = "cart")
 public class Cart {
+    @Id
     private String id;
     private String customerId;
     private String productId;

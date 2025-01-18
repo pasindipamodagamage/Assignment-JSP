@@ -52,3 +52,11 @@ create table orderDetail(
     foreign key(orderId) references orders(id) on update cascade on delete cascade,
     foreign key(productId) references product(id) on update cascade on delete cascade
 );
+create table user(
+    customerId varchar(10),
+    adminId varchar(10),
+    userName varchar(20),
+    password varchar(20),
+    foreign key(customerId) references customer(id) on update cascade on delete cascade,
+    foreign key(adminId) references admin(id) on update cascade on delete cascade
+);

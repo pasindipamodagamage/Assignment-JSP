@@ -7,24 +7,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 /**
  * Author: pasindi
  * Date: 1/16/25
- * Time: 5:50 PM
+ * Time: 10:24 PM
  * Description:
  */
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "orders")
-public class Orders {
+@Table(name = "user")
+public class User {
     @Id
-    private String id;
-    private String adminId;
     private String customerId;
-    private String cardId;
-    private Date date;
+    private String adminId;
+    private String userName;
+    private String password;
 }
