@@ -1,0 +1,120 @@
+/* Global Styles */
+:root {
+    --primary-color: #FF6B6B;
+    --primary-dark: #ff5252;
+    --primary-light: #ff8484;
+    --text-dark: #333333;
+    --text-light: #ffffff;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(255, 107, 107, 0.1), rgba(255, 107, 107, 0.2));
+    padding: 100px 0;
+    margin-bottom: 50px;
+}
+
+.hero-section h1 {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Mission Section */
+.mission-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.mission-section h2 {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Category Section */
+.category-section {
+    padding: 60px 0;
+}
+
+.category-section h2 {
+    color: var(--primary-color);
+}
+
+.card {
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.list-group-item:hover {
+    background-color: rgba(255, 107, 107, 0.1);
+}
+
+/* Values Section */
+.values-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.category-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-dark) !important;
+}
+
+footer a:hover {
+    color: var(--primary-color) !important;
+    text-decoration: none;
+}
+
+#static-phrase {
+    text-align: center;
+    padding-top: 20px;
+    color: var(--text-light);
+}
+
+#static-phrase i {
+    color: var(--primary-color);
+}
+
+/* Buttons and Links */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+/* Images */
+.img-fluid {
+    border-radius: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    .category-section .card {
+        margin-bottom: 30px;
+    }
+}

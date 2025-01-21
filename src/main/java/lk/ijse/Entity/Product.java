@@ -16,13 +16,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity
-@Table(name = "product")
+//@Entity
+//@Table(name = "product")
 public class Product {
-    @Id
+//    @Id
     private String id;
     private String categoryId;
     private String description;
     private Double unitPrice;
     private int qtyOnHand;
+    private String imgUrl;
 }

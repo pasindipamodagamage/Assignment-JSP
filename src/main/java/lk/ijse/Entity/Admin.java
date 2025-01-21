@@ -18,14 +18,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 
-@Entity
-@Table(name = "admin")
+//@Entity
+//@Table(name = "admin")
 
 public class Admin {
-    @Id
+//    @Id
     private String id;
     private String name;
     private String email;
-    private String position="Default admin";
+    private String position;
     private String contact;
+    private String userName;
+    private String password;
+//    private String position="Default admin";
 }

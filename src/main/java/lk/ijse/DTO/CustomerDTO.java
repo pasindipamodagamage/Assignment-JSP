@@ -20,4 +20,6 @@ public class CustomerDTO {
     private String position;
     private String contact;
     private String active;
+    private String userName;
+    private String password;
 }

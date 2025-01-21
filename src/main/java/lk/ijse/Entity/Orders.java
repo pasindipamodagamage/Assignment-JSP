@@ -18,10 +18,10 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity
-@Table(name = "orders")
+//@Entity
+//@Table(name = "orders")
 public class Orders {
-    @Id
+//    @Id
     private String id;
     private String adminId;
     private String customerId;

@@ -16,14 +16,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity
-@Table(name = "customer")
+//@Entity
+//@Table(name = "customer")
 public class Customer {
-    @Id
+//    @Id
     private String id;
     private String name;
     private String address;
-    private String position="Default customer";
+    private String position;
     private String contact;
-    private String active;
+    private String userName;
+    private String password;
+//    private String active;
+//    private String position="Default customer";
 }

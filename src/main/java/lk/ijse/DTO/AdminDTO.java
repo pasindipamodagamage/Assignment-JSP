@@ -20,4 +20,6 @@ public class AdminDTO {
     private String email;
     private String position;
     private String contact;
+    private String userName;
+    private String password;
 }

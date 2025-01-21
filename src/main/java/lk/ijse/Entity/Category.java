@@ -16,10 +16,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity
-@Table(name = "category")
+//@Entity
+//@Table(name = "category")
 public class Category {
-    @Id
+//    @Id
     private String id;
     private String description;
 }

@@ -16,12 +16,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity
-@Table(name = "cart")
+//@Entity
+//@Table(name = "cart")
 public class Cart {
-    @Id
+//    @Id
     private String id;
-
     private String customerId;
     private String productId;
 }
