@@ -41,7 +41,25 @@
                     <a class="nav-link" href="about.jsp">About Us</a>
                 </li>
             </ul>
-            <div class="d-flex">
+            <div class="d-flex align-items-center">
+                <div class="position-relative me-3">
+                    <a href="#" class="text-dark">
+                        <i class="fas fa-heart fa-lg"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            0
+                            <span class="visually-hidden">Favorite items</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="position-relative me-4">
+                    <a href="#" class="text-dark">
+                        <i class="fas fa-shopping-cart fa-lg"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+                            0
+                            <span class="visually-hidden">Cart items</span>
+                        </span>
+                    </a>
+                </div>
                 <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
             </div>
@@ -66,7 +84,6 @@
         <div class="main-categories" id="mainCategories">
             <h2 class="text-center mb-4">Shop by Category</h2>
             <div class="row g-4">
-                <!-- main Category -->
                 <div class="col-md-3">
                     <div class="card category-card" data-category="pet-food">
                         <img src="css/assets/food.jpeg" alt="pet-food" class="card-img-top">
@@ -75,21 +92,21 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- Additional category cards... -->
             </div>
         </div>
 
-        <!-- Sub-categories views (initially hidden) -->
+        <!-- Sub-categories views -->
         <div class="sub-categories d-none" id="subCategories">
             <div class="d-flex align-items-center mb-4">
                 <button class="btn btn-link back-button me-3">
                     <i class="fas fa-arrow-left"></i> Back to Categories
                 </button>
-                <h2 class="category-title mb-0">Category Name</h2>
             </div>
 
-            <!-- Pet Food Sub-categories (initially hidden) -->
+            <!-- Pet Food Sub-categories -->
             <div class="category-products d-none" id="pet-food-products">
+                <h2 class="text-center mb-4">Pet Food & Treats</h2>
                 <div class="row g-4">
                     <div class="col-md-3">
                         <div class="card product-card">
@@ -97,25 +114,27 @@
                             <div class="card-body text-center">
                                 <h5 class="card-title">Dog Food</h5>
                                 <p class="card-text">Premium dry dog food</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="price">Rs. 2500</span>
+                                    <button class="btn btn-primary btn-sm">Add to Cart</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Toys Sub-categories (initially hidden) -->
-            <div class="category-products d-none" id="toys-products">
-                <div class="row g-4">
                     <div class="col-md-3">
                         <div class="card product-card">
-                            <img src="css/assets/dog-toys.jpeg" alt="dog-toys" class="card-img-top">
+                            <img src="css/assets/food.jpeg" alt="cat-food" class="card-img-top">
                             <div class="card-body text-center">
-                                <h5 class="card-title">Dog Toys</h5>
-                                <p class="card-text">Interactive dog toys</p>
+                                <h5 class="card-title">Cat Food</h5>
+                                <p class="card-text">Premium cat food</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="price">Rs. 2200</span>
+                                    <button class="btn btn-primary btn-sm">Add to Cart</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Add more toy products -->
                 </div>
             </div>
         </div>
@@ -289,9 +308,9 @@
                 <h5>Quick Links</h5>
                 <ul class="quick-links">
                     <li><a href="about.jsp">About Us</a></li>
-                    <li><a href="contact.jsp">Contact</a></li>
-                    <li><a href="policy.jsp">Privacy Policy</a></li>
-                    <li><a href="terms.jsp">Terms of Service</a></li>
+                    <li><a href="jsp/contact.jsp">Contact</a></li>
+                    <li><a href="jsp/policy.jsp">Privacy Policy</a></li>
+                    <li><a href="jsp/terms.jsp">Terms of Service</a></li>
                 </ul>
             </div>
             <div class="col-md-4">
@@ -314,7 +333,6 @@
     document.addEventListener('DOMContentLoaded', function () {
         const mainCategories = document.getElementById('mainCategories');
         const subCategories = document.getElementById('subCategories');
-        const categoryTitle = document.querySelector('.category-title');
         const backButton = document.querySelector('.back-button');
 
         // Handle category card clicks
@@ -323,7 +341,7 @@
                 const category = this.dataset.category;
                 const title = this.querySelector('.card-title').textContent;
 
-                // Hide main categories
+                // Hide main categories with fade effect
                 mainCategories.classList.add('fade-out');
                 setTimeout(() => {
                     mainCategories.classList.add('d-none');
@@ -331,9 +349,6 @@
                     // Show sub-categories
                     subCategories.classList.remove('d-none');
                     subCategories.classList.add('fade-in');
-
-                    // Update category title
-                    categoryTitle.textContent = title;
 
                     // Hide all category products
                     document.querySelectorAll('.category-products').forEach(products => {
@@ -352,10 +367,13 @@
         // Handle back button click
         backButton.addEventListener('click', function () {
             subCategories.classList.remove('fade-in');
+            subCategories.classList.add('fade-out');
+
             setTimeout(() => {
                 subCategories.classList.add('d-none');
                 mainCategories.classList.remove('d-none');
                 mainCategories.classList.remove('fade-out');
+                mainCategories.classList.add('fade-in');
             }, 300);
         });
     });

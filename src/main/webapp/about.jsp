@@ -217,9 +217,9 @@
                 <h5>Quick Links</h5>
                 <ul class="quick-links">
                     <li><a href="about.jsp">About Us</a></li>
-                    <li><a href="contact.jsp">Contact</a></li>
-                    <li><a href="policy.jsp">Privacy Policy</a></li>
-                    <li><a href="terms.jsp">Terms of Service</a></li>
+                    <li><a href="jsp/contact.jsp">Contact</a></li>
+                    <li><a href="jsp/policy.jsp">Privacy Policy</a></li>
+                    <li><a href="jsp/terms.jsp">Terms of Service</a></li>
                 </ul>
             </div>
             <div class="col-md-4">

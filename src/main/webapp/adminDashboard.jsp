@@ -51,6 +51,78 @@
     </div>
 </nav>
 
+<div class="container mt-5 mb-5">
+    <!-- Admin Section -->
+    <section id="admin" class="management-section mb-5">
+        <h2 class="section-title mb-4">Admin Management</h2>
+        <div class="row">
+            <div class="col-md-5">
+                <form class="management-form">
+                    <div class="mb-3">
+                        <label class="form-label">Admin ID</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Position</label>
+                        <input type="text" class="form-control" value="an_admin" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Contact</label>
+                        <input type="tel" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Username</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" required>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-add"><i class="fas fa-plus"></i> Add</button>
+                        <button type="button" class="btn btn-update"><i class="fas fa-edit"></i> Update</button>
+                        <button type="button" class="btn btn-delete"><i class="fas fa-trash"></i> Delete</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-7">
+                <div class="table-container">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Position</th>
+                            <th>Contact</th>
+                            <th>Username</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>A001</td>
+                            <td>John Doe</td>
+                            <td>john@pawmart.com</td>
+                            <td>an_admin</td>
+                            <td>1234567890</td>
+                            <td>john_admin</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
 
 <!-- Footer -->
 <footer class="bg-dark text-light py-4">
@@ -64,9 +136,9 @@
                 <h5>Quick Links</h5>
                 <ul class="quick-links">
                     <li><a href="about.jsp">About Us</a></li>
-                    <li><a href="contact.jsp">Contact</a></li>
-                    <li><a href="policy.jsp">Privacy Policy</a></li>
-                    <li><a href="terms.jsp">Terms of Service</a></li>
+                    <li><a href="jsp/contact.jsp">Contact</a></li>
+                    <li><a href="jsp/policy.jsp">Privacy Policy</a></li>
+                    <li><a href="jsp/terms.jsp">Terms of Service</a></li>
                 </ul>
             </div>
             <div class="col-md-4">

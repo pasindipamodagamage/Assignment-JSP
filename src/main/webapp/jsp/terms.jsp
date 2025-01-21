@@ -13,14 +13,14 @@
     <title>PawMart - Your Pet's Favorite Store</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/about.css">
-    <link rel="icon" href="css/assets/web_icon.png">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="icon" href="../css/assets/web_icon.png">
 </head>
 <body>
 <!-- Navigation bar remains the same as index.jsp -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="index.jsp">
+        <a class="navbar-brand" href="../index.jsp">
             <i class="fas fa-paw me-2"></i>PawMart
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -29,16 +29,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.jsp">Home</a>
+                    <a class="nav-link" href="../index.jsp">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="product.jsp">Products</a>
+                    <a class="nav-link" href="../product.jsp">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="categories.jsp">Categories</a>
+                    <a class="nav-link" href="../categories.jsp">Categories</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.jsp">About Us</a>
+                    <a class="nav-link" href="../about.jsp">About Us</a>
                 </li>
             </ul>
             <div class="d-flex">
@@ -60,7 +60,7 @@
             <div class="col-md-4">
                 <h5>Quick Links</h5>
                 <ul class="quick-links">
-                    <li><a href="about.jsp">About Us</a></li>
+                    <li><a href="../about.jsp">About Us</a></li>
                     <li><a href="contact.jsp">Contact</a></li>
                     <li><a href="policy.jsp">Privacy Policy</a></li>
                     <li><a href="terms.jsp">Terms of Service</a></li>
