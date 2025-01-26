@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 /**
  * Author: pasindi
  * Date: 1/16/25
- * Time: 6:07 PM
+ * Time: 5:47 PM
  * Description:
  */
 @AllArgsConstructor
@@ -19,7 +19,6 @@ public class CustomerDTO {
     private String address;
     private String position;
     private String contact;
-    private String active;
     private String userName;
     private String password;
 }

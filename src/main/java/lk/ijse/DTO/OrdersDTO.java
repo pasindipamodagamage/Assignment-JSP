@@ -9,11 +9,11 @@ import java.util.Date;
 /**
  * Author: pasindi
  * Date: 1/16/25
- * Time: 6:09 PM
+ * Time: 5:50 PM
  * Description:
  */
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class OrdersDTO {
     private String id;

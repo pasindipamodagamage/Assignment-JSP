@@ -30,21 +30,19 @@ public class PlaceOrderServlet extends HttpServlet {
         BasicDataSource ds = (BasicDataSource) servletContext.getAttribute("dataSource");
 
         try (Connection conn = ds.getConnection()) {
-            conn.setAutoCommit(false); // Start transaction
+            conn.setAutoCommit(false);
 
             HttpSession session = request.getSession();
             String customerId = (String) session.getAttribute("customerId");
-            String adminId = "A001"; // Hardcoded admin ID (should be dynamic)
+            String adminId = "A001";
 
             if (customerId == null) {
-                response.sendRedirect("login.jsp");
+                response.sendRedirect("index.jsp");
                 return;
             }
 
-            // Generate unique order ID
             String orderId = "ORD" + System.currentTimeMillis();
 
-            // Insert into orders table
             String insertOrderSQL = "INSERT INTO orders (id, adminId, customerId, date) VALUES (?, ?, ?, NOW())";
             try (PreparedStatement orderStmt = conn.prepareStatement(insertOrderSQL)) {
                 orderStmt.setString(1, orderId);
@@ -53,7 +51,6 @@ public class PlaceOrderServlet extends HttpServlet {
                 orderStmt.executeUpdate();
             }
 
-            // Retrieve cart items for the customer
             String cartSQL = "SELECT productId FROM cart WHERE customerId = ?";
             try (PreparedStatement cartStmt = conn.prepareStatement(cartSQL)) {
                 cartStmt.setString(1, customerId);
@@ -74,14 +71,13 @@ public class PlaceOrderServlet extends HttpServlet {
                 }
             }
 
-            // Clear cart after order placement
             String deleteCartSQL = "DELETE FROM cart WHERE customerId = ?";
             try (PreparedStatement cartStmt = conn.prepareStatement(deleteCartSQL)) {
                 cartStmt.setString(1, customerId);
                 cartStmt.executeUpdate();
             }
 
-            conn.commit(); // Commit transaction
+            conn.commit();
             response.sendRedirect("orderSuccess.jsp");
         } catch (SQLException e) {
             e.printStackTrace();

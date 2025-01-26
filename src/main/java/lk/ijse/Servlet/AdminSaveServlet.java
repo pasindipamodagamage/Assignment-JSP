@@ -53,7 +53,7 @@ public class AdminSaveServlet extends HttpServlet {
     }
 
     private String generateId(Connection connection) throws SQLException {
-        String lastId = "AD000"; // Default starting value
+        String lastId = "AD000";
 
         String query = "SELECT id FROM admin ORDER BY id DESC LIMIT 1";
         try (PreparedStatement stmt = connection.prepareStatement(query);

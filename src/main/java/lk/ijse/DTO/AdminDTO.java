@@ -7,13 +7,14 @@ import lombok.NoArgsConstructor;
 /**
  * Author: pasindi
  * Date: 1/16/25
- * Time: 6:04 PM
+ * Time: 5:01 PM
  * Description:
  */
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+
 public class AdminDTO {
     private String id;
     private String name;

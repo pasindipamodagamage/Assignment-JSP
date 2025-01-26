@@ -42,28 +42,9 @@
                 </li>
             </ul>
             <div class="d-flex align-items-center">
-                <div class="position-relative me-3">
-                    <a href="#" class="text-dark">
-                        <i class="fas fa-heart fa-lg"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            0
-                            <span class="visually-hidden">Favorite items</span>
-                        </span>
-                    </a>
-                </div>
-                <div class="position-relative me-4">
-                    <a href="#" class="text-dark">
-                        <i class="fas fa-shopping-cart fa-lg"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
-                            0
-                            <span class="visually-hidden">Cart items</span>
-                        </span>
-                    </a>
-                </div>
                 <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
             </div>
-
         </div>
     </div>
 </nav>
@@ -173,19 +154,19 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="loginForm">
+                <form id="loginForm" action="login-servlet" method="post">
                     <div class="mb-3">
                         <label for="loginUsername" class="form-label">Username</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
-                            <input type="text" class="form-control" id="loginUsername" required>
+                            <input type="text" name="userName" class="form-control" id="loginUsername" required>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="loginPassword" class="form-label">Password</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                            <input type="password" class="form-control" id="loginPassword" required>
+                            <input type="password" name="password" class="form-control" id="loginPassword" required>
                         </div>
                     </div>
                     <div class="mb-3 form-check">
@@ -213,37 +194,37 @@
             </div>
             <div class="modal-body">
                 <!-- Social Login Options -->
-                <div class="social-login mb-4">
-                    <p class="text-center mb-3">Sign up with:</p>
-                    <div class="d-flex justify-content-center gap-3 mb-3">
-                        <a href="#" class="btn btn-google w-100">
-                            <i class="fab fa-google me-2"></i>Google
-                        </a>
-                        <a href="#" class="btn btn-facebook w-100">
-                            <i class="fab fa-facebook-f me-2"></i>Facebook
-                        </a>
-                    </div>
-                    <a href="#" class="btn btn-email w-100 mb-3">
-                        <i class="fas fa-envelope me-2"></i>Sign up with Email
-                    </a>
-                    <div class="divider"><span>OR</span></div>
-                </div>
+<%--                <div class="social-login mb-4">--%>
+<%--                    <p class="text-center mb-3">Sign up with:</p>--%>
+<%--                    <div class="d-flex justify-content-center gap-3 mb-3">--%>
+<%--                        <a href="" class="btn btn-google w-100">--%>
+<%--                            <i class="fab fa-google me-2"></i>Google--%>
+<%--                        </a>--%>
+<%--                        <a href="#" class="btn btn-facebook w-100">--%>
+<%--                            <i class="fab fa-facebook-f me-2"></i>Facebook--%>
+<%--                        </a>--%>
+<%--                    </div>--%>
+<%--                    <a href="#" class="btn btn-email w-100 mb-3">--%>
+<%--                        <i class="fas fa-envelope me-2"></i>Sign up with Email--%>
+<%--                    </a>--%>
+<%--                    <div class="divider"><span>OR</span></div>--%>
+<%--                </div>--%>
 
                 <!-- Registration Form -->
-                <form id="registerForm">
+                <form id="registerForm" action="register-servlet" method="post">
                     <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="registerId" class="form-label">ID</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="fas fa-id-card"></i></span>
-                                <input type="text" class="form-control" id="registerId" required>
-                            </div>
-                        </div>
+<%--                        <div class="col-md-6 mb-3">--%>
+<%--                            <label for="registerId" class="form-label">ID</label>--%>
+<%--                            <div class="input-group">--%>
+<%--                                <span class="input-group-text"><i class="fas fa-id-card"></i></span>--%>
+<%--                                <input type="text" class="form-control" id="registerId" required>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
                         <div class="col-md-6 mb-3">
                             <label for="registerName" class="form-label">Full Name</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                <input type="text" class="form-control" id="registerName" required>
+                                <input type="text" name="name" class="form-control" id="registerName" required>
                             </div>
                         </div>
                     </div>
@@ -252,7 +233,7 @@
                         <label for="registerAddress" class="form-label">Address</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-home"></i></span>
-                            <input type="text" class="form-control" id="registerAddress" required>
+                            <input type="text" name="address" class="form-control" id="registerAddress" required>
                         </div>
                     </div>
 
@@ -260,7 +241,7 @@
                         <label for="registerContact" class="form-label">Contact Number</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                            <input type="tel" class="form-control" id="registerContact" required>
+                            <input type="tel" name="contact" class="form-control" id="registerContact" required>
                         </div>
                     </div>
 
@@ -268,7 +249,7 @@
                         <label for="registerUsername" class="form-label">Username</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
-                            <input type="text" class="form-control" id="registerUsername" required>
+                            <input type="text" name="userName" class="form-control" id="registerUsername" required>
                         </div>
                     </div>
 
@@ -277,16 +258,16 @@
                             <label for="registerPassword" class="form-label">Password</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                                <input type="password" class="form-control" id="registerPassword" required>
+                                <input type="password"  name="password" class="form-control" id="registerPassword" required>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="confirmPassword" class="form-label">Confirm Password</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                                <input type="password" class="form-control" id="confirmPassword" required>
-                            </div>
-                        </div>
+<%--                        <div class="col-md-6 mb-3">--%>
+<%--                            <label for="confirmPassword" class="form-label">Confirm Password</label>--%>
+<%--                            <div class="input-group">--%>
+<%--                                <span class="input-group-text"><i class="fas fa-lock"></i></span>--%>
+<%--                                <input type="password" name="password" class="form-control" id="confirmPassword" required>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
                     </div>
 
                     <button type="submit" class="btn btn-primary w-100">Create Account</button>

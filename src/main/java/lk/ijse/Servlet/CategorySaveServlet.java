@@ -52,7 +52,7 @@ public class CategorySaveServlet extends HttpServlet {
     private String generateId(Connection connection) throws SQLException {
         String lastId = "CT000";
 
-        String query = "SELECT id FROM customer ORDER BY id DESC LIMIT 1";
+        String query = "SELECT id FROM category ORDER BY id DESC LIMIT 1";
         try (PreparedStatement stmt = connection.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
             if (rs.next()) {

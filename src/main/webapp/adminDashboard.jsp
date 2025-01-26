@@ -1,4 +1,5 @@
-<%--
+<%@ page import="lk.ijse.DTO.AdminDTO" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: pasindi
   Date: 1/21/25
@@ -18,9 +19,9 @@
 </head>
 <body>
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="index.jsp">
+        <a class="navbar-brand" href="jsp/index.jsp">
             <i class="fas fa-paw me-2"></i>PawMart
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -29,7 +30,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.jsp">Home</a>
+                    <a class="nav-link" href="jsp/index.jsp">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#admin">Admin</a>
@@ -57,34 +58,118 @@
         <h2 class="section-title mb-4">Admin Management</h2>
         <div class="row">
             <div class="col-md-5">
-                <form class="management-form">
-                    <div class="mb-3">
-                        <label class="form-label">Admin ID</label>
-                        <input type="text" class="form-control" required>
-                    </div>
+                <form class="management-form" action="admin-save-servlet" method="post">
+                    <%--                    <div class="mb-3">--%>
+                    <%--                        <label class="form-label">Admin ID</label>--%>
+                    <%--                        <input type="text" class="form-control" required>--%>
+                    <%--                    </div>--%>
                     <div class="mb-3">
                         <label class="form-label">Name</label>
-                        <input type="text" class="form-control" required>
+                        <input type="text" name="name" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Email</label>
-                        <input type="email" class="form-control" required>
+                        <input type="email" name="email" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Position</label>
-                        <input type="text" class="form-control" value="an_admin" readonly>
+                        <input type="text" class="form-control" value="admin" readonly>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Contact</label>
-                        <input type="tel" class="form-control" required>
+                        <input type="tel" name="contact" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Username</label>
-                        <input type="text" class="form-control" required>
+                        <input type="text" name="userName" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Password</label>
-                        <input type="password" class="form-control" required>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-add"><i class="fas fa-plus"></i> Add</button>
+                        <button type="button" class="btn btn-update"><i class="fas fa-edit"></i> Update</button>
+                        <button type="button" class="btn btn-delete"><i class="fas fa-trash"></i> Delete</button>
+                    </div>
+                </form>
+            </div>
+                        <div class="col-md-7">
+                            <div class="table-container">
+                                <%
+                                    List<AdminDTO> adminDataList = (List<AdminDTO>) request.getAttribute("admins");
+                                    if (adminDataList != null && !adminDataList.isEmpty()) {
+                                %>
+                                <table id="customer-table" class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Contact</th>
+                                        <th>Username</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <% for (AdminDTO adminDTO : adminDataList) {%>
+                                    <tr>
+                                        <td><%= adminDTO.getId()%>
+                                        </td>
+                                        <td><%= adminDTO.getName()%>
+                                        </td>
+                                        <td><%= adminDTO.getEmail()%>>
+                                        </td>
+                                        <td><%= adminDTO.getContact()%>>
+                                        </td>
+                                        <td><%= adminDTO.getUserName()%>>
+                                        </td>
+                                    </tr>
+                                    <%}%>
+                                    </tbody>
+                                </table>
+                                <%
+                                    }
+                                %>
+                            </div>
+                        </div>
+        </div>
+    </section>
+
+    <!-- Customer Section -->
+    <section id="customer" class="management-section mb-5">
+        <div class="section-header mb-4">
+            <h2 class="text-center">Customer Management</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <form class="management-form" action="customer-save-servlet" method="post">
+                    <%--                    <div class="mb-3">--%>
+                    <%--                        <label class="form-label">Customer ID</label>--%>
+                    <%--                        <input type="text" class="form-control" required>--%>
+                    <%--                    </div>--%>
+                    <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Address</label>
+                        <textarea class="form-control" name="address" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Position</label>
+                        <input type="text" class="form-control" value="customer" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Contact</label>
+                        <input type="tel" name="contact" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Username</label>
+                        <input type="text" name="userName" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control" required>
                     </div>
                     <div class="button-group">
                         <button type="submit" class="btn btn-add"><i class="fas fa-plus"></i> Add</button>
@@ -100,20 +185,18 @@
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
-                            <th>Email</th>
-                            <th>Position</th>
+                            <th>Address</th>
                             <th>Contact</th>
                             <th>Username</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td>A001</td>
-                            <td>John Doe</td>
-                            <td>john@pawmart.com</td>
-                            <td>an_admin</td>
-                            <td>1234567890</td>
-                            <td>john_admin</td>
+                            <td>C001</td>
+                            <td>Jane Smith</td>
+                            <td>123 Pet Lane, City</td>
+                            <td>9876543210</td>
+                            <td>jane_customer</td>
                         </tr>
                         </tbody>
                     </table>
@@ -122,6 +205,201 @@
         </div>
     </section>
 
+    <!-- Categories Section -->
+    <section id="categories" class="management-section mb-5">
+        <div class="section-header mb-4">
+            <h2 class="text-center">Category Management</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <form class="management-form" action="category-save-servlet" method="post">
+                    <%--                    <div class="mb-3">--%>
+                    <%--                        <label class="form-label">Category ID</label>--%>
+                    <%--                        <input type="text" class="form-control" required>--%>
+                    <%--                    </div>--%>
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <input type="text" name="description" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Category Image</label>
+                        <input type="file" name="imgUrl" class="form-control">
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-add"><i class="fas fa-plus"></i> Add</button>
+                        <button type="button" class="btn btn-update"><i class="fas fa-edit"></i> Update</button>
+                        <button type="button" class="btn btn-delete"><i class="fas fa-trash"></i> Delete</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-7">
+                <div class="table-container">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>CAT001</td>
+                            <td>Dog Supplies</td>
+                        </tr>
+                        <tr>
+                            <td>CAT002</td>
+                            <td>Cat Supplies</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <%--    --%>
+    <!-- Products Section -->
+    <section id="product" class="management-section mb-5">
+        <div class="section-header mb-4">
+            <h2 class="text-center">Product Management</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <form class="management-form">
+                    <%--                    <div class="mb-3">--%>
+                    <%--                        <label class="form-label">Product ID</label>--%>
+                    <%--                        <input type="text" class="form-control" required>--%>
+                    <%--                    </div>--%>
+                    <div class="mb-3">
+                        <label class="form-label">Category</label>
+                        <select class="form-select" name="categoryId" required>
+                            <option value="">Select Category</option>
+                            <option value="CAT001">Dog Supplies</option>
+                            <option value="CAT002">Cat Supplies</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Unit Price</label>
+                        <input type="number" step="0.01" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Quantity on Hand</label>
+                        <input type="number" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Product Image</label>
+                        <input type="file" class="form-control">
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-add"><i class="fas fa-plus"></i> Add</button>
+                        <button type="button" class="btn btn-update"><i class="fas fa-edit"></i> Update</button>
+                        <button type="button" class="btn btn-delete"><i class="fas fa-trash"></i> Delete</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-7">
+                <div class="table-container">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Unit Price</th>
+                            <th>Qty</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>P001</td>
+                            <td>Dog Supplies</td>
+                            <td>Dog Collar</td>
+                            <td>$19.99</td>
+                            <td>50</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Orders Section -->
+    <section id="orders" class="management-section mb-5">
+        <div class="section-header mb-4">
+            <h2 class="text-center">Order Management</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <form class="management-form">
+                    <div class="mb-3">
+                        <label class="form-label">Order ID</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Admin</label>
+                        <select class="form-select" required>
+                            <option value="">Select Admin</option>
+                            <option value="A001">John Doe</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Customer</label>
+                        <select class="form-select" required>
+                            <option value="">Select Customer</option>
+                            <option value="C001">Jane Smith</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Date</label>
+                        <input type="date" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Cart</label>
+                        <select class="form-select" required>
+                            <option value="">Select Cart</option>
+                            <option value="CART001">Cart 001</option>
+                        </select>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-add"><i class="fas fa-plus"></i> Add</button>
+                        <button type="button" class="btn btn-update"><i class="fas fa-edit"></i> Update</button>
+                        <button type="button" class="btn btn-delete"><i class="fas fa-trash"></i> Delete</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-7">
+                <div class="table-container">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Admin</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Cart</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>O001</td>
+                            <td>John Doe</td>
+                            <td>Jane Smith</td>
+                            <td>2024-01-25</td>
+                            <td>CART001</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 </div>
 
 <!-- Footer -->

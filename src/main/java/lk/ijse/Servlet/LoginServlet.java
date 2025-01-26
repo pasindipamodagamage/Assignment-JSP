@@ -18,40 +18,59 @@ import java.sql.SQLException;
  * Author: pasindi
  * Date: 1/21/25
  * Time: 5:59 PM
- * Description:
+ * Description: Login validation for Customer and Admin
  */
 @WebServlet(name = "loginServlet", value = "/login-servlet")
 public class LoginServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        ServletContext servletContext=req.getServletContext();
-        BasicDataSource ds= (BasicDataSource) servletContext.getAttribute("dataSource");
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ServletContext servletContext = req.getServletContext();
+        BasicDataSource ds = (BasicDataSource) servletContext.getAttribute("dataSource");
 
-        String userName=req.getParameter("userName");
-        String password=req.getParameter("password");
+        if (ds == null) {
+            System.err.println("Database connection pool (DataSource) is null.");
+            resp.sendRedirect("index.jsp?message=Database Connection Error");
+            return;
+        }
 
-        try {
-            Connection connection=ds.getConnection();
-            PreparedStatement pstm1=connection.prepareStatement("SELECT * FROM customer WHERE userName = ? AND password = ?");
-            pstm1.setString(1,userName);
-            pstm1.setString(2,password);
-            ResultSet resultSet1= pstm1.executeQuery();
+        String userName = req.getParameter("userName");
+        String password = req.getParameter("password");
 
-
-            PreparedStatement pstm2=connection.prepareStatement("SELECT * FROM admin WHERE userName = ? AND password = ?");
-            pstm2.setString(1,userName);
-            pstm2.setString(2,password);
-            ResultSet resultSet2=pstm2.executeQuery();
-
-            if (resultSet1.next() || resultSet2.next()) {
-                resp.sendRedirect("index.jsp?message=Login Success");
-            } else {
-                resp.sendRedirect("index.jsp?message=User Not Found");
+        try (Connection connection = ds.getConnection()) {
+            // Check Customer Login
+            try (PreparedStatement pstm = connection.prepareStatement(
+                    "SELECT * FROM customer WHERE BINARY userName = ? AND BINARY password = ?")) {
+                pstm.setString(1, userName);
+                pstm.setString(2, password);
+                try (ResultSet resultSet = pstm.executeQuery()) {
+                    if (resultSet.next()) {
+                        System.out.println("Customer login successful: " + userName);
+                        resp.sendRedirect("customerDashboard.jsp");
+                        return;
+                    }
+                }
             }
-        } catch (SQLException | IOException e) {
-            throw new RuntimeException(e);
+
+            // Check Admin Login
+            try (PreparedStatement pstm = connection.prepareStatement(
+                    "SELECT * FROM admin WHERE BINARY userName = ? AND BINARY password = ?")) {
+                pstm.setString(1, userName);
+                pstm.setString(2, password);
+                try (ResultSet resultSet = pstm.executeQuery()) {
+                    if (resultSet.next()) {
+                        System.out.println("Admin login successful: " + userName);
+                        resp.sendRedirect("adminDashboard.jsp");
+                        return;
+                    }
+                }
+            }
+
+            // If no user is found
+            System.err.println("Invalid login attempt for user: " + userName);
+            resp.sendRedirect("index.jsp?message=Invalid Credentials");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            resp.sendRedirect("index.jsp?message=Something went wrong!");
         }
     }
-
-
 }

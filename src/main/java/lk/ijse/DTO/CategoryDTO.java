@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 /**
  * Author: pasindi
  * Date: 1/16/25
- * Time: 6:06 PM
+ * Time: 5:45 PM
  * Description:
  */
 @AllArgsConstructor
@@ -16,4 +16,5 @@ import lombok.NoArgsConstructor;
 public class CategoryDTO {
     private String id;
     private String description;
+    private String imgUrl;
 }
