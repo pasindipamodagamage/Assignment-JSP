@@ -32,10 +32,10 @@
                     <a class="nav-link" href="../index.jsp">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../product.jsp">Products</a>
+                    <a class="nav-link" href="../product-save.jsp">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../categories.jsp">Categories</a>
+                    <a class="nav-link" href="../categories-save.jsp">Categories</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../about.jsp">About Us</a>

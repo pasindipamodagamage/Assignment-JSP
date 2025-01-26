@@ -174,37 +174,83 @@
 </nav>
 
 <div class="container mt-5 mb-5">
-
-    <!-- Orders Section -->
-    <section id="orders" class="management-section mb-5">
-        <div class="section-header mb-4">
-            <h2 class="text-center">Order Management</h2>
-        </div>
+    <!-- Admin Section -->
+    <section id="admin" class="management-section mb-5">
+        <h2 class="section-title mb-4">Admin Management</h2>
         <div class="row">
+            <div class="col-md-5">
+                <form class="management-form" action="admin-save-servlet" method="post">
+                    <%--                    <div class="mb-3">--%>
+                    <%--                        <label class="form-label">Admin ID</label>--%>
+                    <%--                        <input type="text" class="form-control" required>--%>
+                    <%--                    </div>--%>
+                    <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+                    <%--                    <div class="mb-3">--%>
+                    <%--                        <label class="form-label">Position</label>--%>
+                    <%--                        <input type="text" class="form-control" value="admin" readonly>--%>
+                    <%--                    </div>--%>
+                    <div class="mb-3">
+                        <label class="form-label">Contact</label>
+                        <input type="tel" name="contact" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Username</label>
+                        <input type="text" name="userName" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-add"><i class="fas fa-plus"></i> Add</button>
+                        <button type="button" class="btn btn-update"><i class="fas fa-edit"></i> Update</button>
+                        <button type="button" class="btn btn-delete"><i class="fas fa-trash"></i> Delete</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-7">
                 <div class="table-container">
-                    <table class="table table-hover">
+                    <%
+                        List<AdminTM> adminList = (List<AdminTM>) request.getAttribute("admins");
+                        if (adminList != null && !adminList.isEmpty()) {
+                    %>
+                    <table id="admin-list" class="table table-hover">
                         <thead>
                         <tr>
-                            <th>Order ID</th>
-                            <th>Admin</th>
-                            <th>Customer</th>
-                            <th>Date</th>
-                            <th>Cart</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                            <th>Username</th>
                         </tr>
                         </thead>
                         <tbody>
+                        <% for (AdminTM admin : adminList) { %>
                         <tr>
-                            <td>O001</td>
-                            <td>John Doe</td>
-                            <td>Jane Smith</td>
-                            <td>2024-01-25</td>
-                            <td>CART001</td>
+                            <td><%= admin.getId() %></td>
+                            <td><%= admin.getName() %></td>
+                            <td><%= admin.getEmail() %></td>
+                            <td><%= admin.getContact() %></td>
+                            <td><%= admin.getUserName() %></td>
                         </tr>
+                        <% } %>
                         </tbody>
                     </table>
+                    <% } else { %>
+                    <p style="color: red;">No admin records found.</p>
+                    <% } %>
                 </div>
             </div>
+        </div>
     </section>
+
 </div>
 </div>
 

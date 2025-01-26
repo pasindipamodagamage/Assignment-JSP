@@ -19,7 +19,7 @@ public class AdminDTO {
     private String id;
     private String name;
     private String email;
-    private String contact;
+    private int contact;
     private String userName;
     private String password;
 }

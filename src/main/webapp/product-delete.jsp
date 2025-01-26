@@ -1,6 +1,4 @@
-<%@ page import="lk.ijse.DTO.AdminDTO" %>
-<%@ page import="java.util.List" %>
-<%@ page import="lk.ijse.DTO.EntityTM.AdminTM" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: pasindi
   Date: 1/21/25
@@ -175,37 +173,19 @@
 
 <div class="container mt-5 mb-5">
 
-    <!-- Orders Section -->
-    <section id="orders" class="management-section mb-5">
+    <!-- Products Section -->
+    <section id="product" class="management-section mb-5">
         <div class="section-header mb-4">
-            <h2 class="text-center">Order Management</h2>
+            <h2 class="text-center">Product Management</h2>
         </div>
-        <div class="row">
-                <div class="table-container">
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th>Order ID</th>
-                            <th>Admin</th>
-                            <th>Customer</th>
-                            <th>Date</th>
-                            <th>Cart</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>O001</td>
-                            <td>John Doe</td>
-                            <td>Jane Smith</td>
-                            <td>2024-01-25</td>
-                            <td>CART001</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+                <form class="management-form">
+                    <div class="mb-3">
+                        <label class="form-label">Product ID</label>
+                        <input type="text" name="id" class="form-control" required>
+                    </div>
+                        <button type="submit" class="btn btn-delete"><i class="fas fa-trash"></i> Delete</button>
+                </form>
     </section>
-</div>
 </div>
 
 <!-- Footer -->

@@ -43,7 +43,6 @@ public class LoginServlet extends HttpServlet {
                 pstm.setString(2, password);
                 try (ResultSet resultSet = pstm.executeQuery()) {
                     if (resultSet.next()) {
-                        System.out.println("Customer login successful: " + userName);
                         resp.sendRedirect("customerDashboard.jsp");
                         return;
                     }
@@ -57,15 +56,11 @@ public class LoginServlet extends HttpServlet {
                 pstm.setString(2, password);
                 try (ResultSet resultSet = pstm.executeQuery()) {
                     if (resultSet.next()) {
-                        System.out.println("Admin login successful: " + userName);
                         resp.sendRedirect("adminDashboard.jsp");
                         return;
                     }
                 }
             }
-
-            // If no user is found
-            System.err.println("Invalid login attempt for user: " + userName);
             resp.sendRedirect("index.jsp?message=Invalid Credentials");
 
         } catch (SQLException e) {

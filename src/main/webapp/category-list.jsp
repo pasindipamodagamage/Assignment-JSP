@@ -1,6 +1,4 @@
-<%@ page import="lk.ijse.DTO.AdminDTO" %>
-<%@ page import="java.util.List" %>
-<%@ page import="lk.ijse.DTO.EntityTM.AdminTM" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: pasindi
   Date: 1/21/25
@@ -174,36 +172,56 @@
 </nav>
 
 <div class="container mt-5 mb-5">
-
-    <!-- Orders Section -->
-    <section id="orders" class="management-section mb-5">
+    <!-- Categories Section -->
+    <section id="categories" class="management-section mb-5">
         <div class="section-header mb-4">
-            <h2 class="text-center">Order Management</h2>
+            <h2 class="text-center">Category Management</h2>
         </div>
         <div class="row">
+            <div class="col-md-5">
+                <form class="management-form" action="category-save-servlet" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Category ID</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <input type="text" name="description" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Category Image</label>
+                        <input type="file" name="imgUrl" class="form-control">
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-add"><i class="fas fa-plus"></i> Add</button>
+                        <button type="submit" class="btn btn-update"><i class="fas fa-edit"></i> Update</button>
+                        <button type="submit" class="btn btn-delete"><i class="fas fa-trash"></i> Delete</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-7">
                 <div class="table-container">
                     <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th>Order ID</th>
-                            <th>Admin</th>
-                            <th>Customer</th>
-                            <th>Date</th>
-                            <th>Cart</th>
+                            <th>ID</th>
+                            <th>Description</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td>O001</td>
-                            <td>John Doe</td>
-                            <td>Jane Smith</td>
-                            <td>2024-01-25</td>
-                            <td>CART001</td>
+                            <td>CAT001</td>
+                            <td>Dog Supplies</td>
+                        </tr>
+                        <tr>
+                            <td>CAT002</td>
+                            <td>Cat Supplies</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+        </div>
     </section>
 </div>
 </div>

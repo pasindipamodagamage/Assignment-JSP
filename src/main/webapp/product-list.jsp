@@ -1,6 +1,4 @@
-<%@ page import="lk.ijse.DTO.AdminDTO" %>
-<%@ page import="java.util.List" %>
-<%@ page import="lk.ijse.DTO.EntityTM.AdminTM" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: pasindi
   Date: 1/21/25
@@ -175,35 +173,74 @@
 
 <div class="container mt-5 mb-5">
 
-    <!-- Orders Section -->
-    <section id="orders" class="management-section mb-5">
+    <!-- Products Section -->
+    <section id="product" class="management-section mb-5">
         <div class="section-header mb-4">
-            <h2 class="text-center">Order Management</h2>
+            <h2 class="text-center">Product Management</h2>
         </div>
         <div class="row">
+            <div class="col-md-5">
+                <form class="management-form">
+                    <div class="mb-3">
+                        <label class="form-label">Product ID</label>
+                        <input type="text" name="id" class="form-control" required></div>
+                    <div class="mb-3">
+                        <label class="form-label">Category Id</label>
+                        <input type="file" name="categoryId" class="form-control">
+                        <%--        <select class="form-select" name="categoryId" required>--%>
+                        <%--                            <option value="">Select Category</option>--%>
+                        <%--                            <option value="CAT001">Dog Supplies</option>--%>
+                        <%--                            <option value="CAT002">Cat Supplies</option>--%>
+                        <%--                        </select>--%>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <input type="text" name="description" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Unit Price</label>
+                        <input type="number" name="unitPrice" step="0.01" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Quantity on Hand</label>
+                        <input type="number" name="qtyOnHand" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Product Image</label>
+                        <input type="file" name="imgUrl" class="form-control">
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-add"><i class="fas fa-plus"></i> Add</button>
+                        <button type="submit" class="btn btn-update"><i class="fas fa-edit"></i> Update</button>
+                        <button type="submit" class="btn btn-delete"><i class="fas fa-trash"></i> Delete</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-7">
                 <div class="table-container">
                     <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th>Order ID</th>
-                            <th>Admin</th>
-                            <th>Customer</th>
-                            <th>Date</th>
-                            <th>Cart</th>
+                            <th>ID</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Unit Price</th>
+                            <th>Qty</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td>O001</td>
-                            <td>John Doe</td>
-                            <td>Jane Smith</td>
-                            <td>2024-01-25</td>
-                            <td>CART001</td>
+                            <td>P001</td>
+                            <td>Dog Supplies</td>
+                            <td>Dog Collar</td>
+                            <td>$19.99</td>
+                            <td>50</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+        </div>
     </section>
 </div>
 </div>

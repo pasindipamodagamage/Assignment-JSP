@@ -33,8 +33,10 @@ public class PlaceOrderServlet extends HttpServlet {
             conn.setAutoCommit(false);
 
             HttpSession session = request.getSession();
-            String customerId = (String) session.getAttribute("customerId");
-            String adminId = "A001";
+//            String customerId = (String) session.getAttribute("customerId");
+            String customerId = "CU001";
+
+            String adminId = "AD001";
 
             if (customerId == null) {
                 response.sendRedirect("index.jsp");

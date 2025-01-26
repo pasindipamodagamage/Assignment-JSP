@@ -11,4 +11,5 @@ import jakarta.servlet.http.HttpServlet;
  */
 @WebServlet(name = "cartServlet", value = "/cart-servlet")
 public class CartServlet extends HttpServlet {
+
 }

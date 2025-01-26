@@ -33,11 +33,12 @@ public class RegisterServlet extends HttpServlet {
         String contact = req.getParameter("contact");
         String userName = req.getParameter("userName");
         String password = req.getParameter("password");
+        boolean status=true;
 
         try {
             Connection connection=ds.getConnection();
             PreparedStatement preparedStatement=connection.prepareStatement("INSERT INTO customer(id, name, address, " +
-                    "contact, userName, password) VALUES (?,?,?,?,?,?)");
+                    "contact, userName, password, status) VALUES (?,?,?,?,?,?,?)");
             String id = generateId(connection);
 
             preparedStatement.setString(1,id);
@@ -46,7 +47,7 @@ public class RegisterServlet extends HttpServlet {
             preparedStatement.setString(4,contact);
             preparedStatement.setString(5,userName);
             preparedStatement.setString(6,password);
-
+            preparedStatement.setBoolean(7,true);
             int i = preparedStatement.executeUpdate();
 
             if (i>0) {
