@@ -1,5 +1,6 @@
-package lk.ijse.DTO;
+package lk.ijse.DTO.EntityTM;
 
+import lk.ijse.DTO.ProductDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,14 +8,17 @@ import lombok.NoArgsConstructor;
 /**
  * Author: pasindi
  * Date: 1/16/25
- * Time: 5:45 PM
+ * Time: 5:55 PM
  * Description:
  */
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class CategoryDTO {
+public class ProductTM extends ProductDTO {
     private String id;
+    private String categoryId;
     private String description;
-//    private String imgUrl;
+    private Double unitPrice;
+    private int qtyOnHand;
+    private String imgUrl;
 }

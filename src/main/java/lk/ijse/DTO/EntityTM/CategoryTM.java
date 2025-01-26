@@ -1,5 +1,6 @@
-package lk.ijse.DTO;
+package lk.ijse.DTO.EntityTM;
 
+import lk.ijse.DTO.CategoryDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class CategoryDTO {
+public class CategoryTM extends CategoryDTO {
     private String id;
     private String description;
 //    private String imgUrl;

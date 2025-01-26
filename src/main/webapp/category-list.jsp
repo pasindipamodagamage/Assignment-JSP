@@ -1,4 +1,5 @@
-<%--
+<%@ page import="lk.ijse.DTO.EntityTM.CategoryTM" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: pasindi
   Date: 1/21/25
@@ -29,7 +30,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="adminDashboard.jsp">Home</a>
+                    <a class="nav-link" href="index.jsp">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a
@@ -177,51 +178,31 @@
         <div class="section-header mb-4">
             <h2 class="text-center">Category Management</h2>
         </div>
-        <div class="row">
-            <div class="col-md-5">
-                <form class="management-form" action="category-save-servlet" method="post">
-                    <div class="mb-3">
-                        <label class="form-label">Category ID</label>
-                        <input type="text" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Description</label>
-                        <input type="text" name="description" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Category Image</label>
-                        <input type="file" name="imgUrl" class="form-control">
-                    </div>
-                    <div class="button-group">
-                        <button type="submit" class="btn btn-add"><i class="fas fa-plus"></i> Add</button>
-                        <button type="submit" class="btn btn-update"><i class="fas fa-edit"></i> Update</button>
-                        <button type="submit" class="btn btn-delete"><i class="fas fa-trash"></i> Delete</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-7">
-                <div class="table-container">
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Description</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>CAT001</td>
-                            <td>Dog Supplies</td>
-                        </tr>
-                        <tr>
-                            <td>CAT002</td>
-                            <td>Cat Supplies</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+        <%
+            List<CategoryTM> categoryDataList = (List<CategoryTM>) request.getAttribute("category");
+            if (categoryDataList != null && !categoryDataList.isEmpty()) {
+        %>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% for (CategoryTM categoryTM : categoryDataList) {%>
+            <tr>
+                <td><%= categoryTM.getId()%>
+                </td>
+                <td><%= categoryTM.getDescription()%>
+                </td>
+            </tr>
+            <%}%>
+            </tbody>
+        </table>
+        <%
+            }
+        %>
     </section>
 </div>
 </div>

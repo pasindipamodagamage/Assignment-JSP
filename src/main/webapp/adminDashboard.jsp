@@ -1,6 +1,8 @@
 <%@ page import="lk.ijse.DTO.AdminDTO" %>
 <%@ page import="java.util.List" %>
-<%@ page import="lk.ijse.DTO.EntityTM.AdminTM" %><%--
+<%@ page import="lk.ijse.DTO.EntityTM.AdminTM" %>
+<%@ page import="lk.ijse.DTO.EntityTM.OrderTM" %>
+<%@ page import="lk.ijse.DTO.EntityTM.CategoryTM" %><%--
   Created by IntelliJ IDEA.
   User: pasindi
   Date: 1/21/25
@@ -31,7 +33,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="adminDashboard.jsp">Home</a>
+                    <a class="nav-link" href="index.jsp">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a
@@ -180,30 +182,41 @@
         <div class="section-header mb-4">
             <h2 class="text-center">Order Management</h2>
         </div>
-        <div class="row">
-                <div class="table-container">
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th>Order ID</th>
-                            <th>Admin</th>
-                            <th>Customer</th>
-                            <th>Date</th>
-                            <th>Cart</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>O001</td>
-                            <td>John Doe</td>
-                            <td>Jane Smith</td>
-                            <td>2024-01-25</td>
-                            <td>CART001</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+
+        <%
+            List<OrderTM> ordersDataList = (List<OrderTM>) request.getAttribute("orders");
+            if (ordersDataList != null && !ordersDataList.isEmpty()) {
+        %>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Admin Id</th>
+                <th>Card Id</th>
+                <th>Customer Id</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% for (OrderTM orderTM : ordersDataList) {%>
+            <tr>
+                <td><%= orderTM.getId()%>
+                </td>
+                <td><%= orderTM.getAdminId()%>
+                </td>
+                <td><%= orderTM.getCustomerId()%>
+                </td>
+                <td><%= orderTM.getCardId()%>
+                </td>
+                <td><%= orderTM.getDate()%>
+                </td>
+            </tr>
+            <%}%>
+            </tbody>
+        </table>
+        <%
+            }
+        %>
     </section>
 </div>
 </div>

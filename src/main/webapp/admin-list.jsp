@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="adminDashboard.jsp">Home</a>
+                    <a class="nav-link" href="index.jsp">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a
@@ -178,43 +178,6 @@
     <section id="admin" class="management-section mb-5">
         <h2 class="section-title mb-4">Admin Management</h2>
         <div class="row">
-            <div class="col-md-5">
-                <form class="management-form" action="admin-save-servlet" method="post">
-                    <%--                    <div class="mb-3">--%>
-                    <%--                        <label class="form-label">Admin ID</label>--%>
-                    <%--                        <input type="text" class="form-control" required>--%>
-                    <%--                    </div>--%>
-                    <div class="mb-3">
-                        <label class="form-label">Name</label>
-                        <input type="text" name="name" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        <input type="email" name="email" class="form-control" required>
-                    </div>
-                    <%--                    <div class="mb-3">--%>
-                    <%--                        <label class="form-label">Position</label>--%>
-                    <%--                        <input type="text" class="form-control" value="admin" readonly>--%>
-                    <%--                    </div>--%>
-                    <div class="mb-3">
-                        <label class="form-label">Contact</label>
-                        <input type="tel" name="contact" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Username</label>
-                        <input type="text" name="userName" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control" required>
-                    </div>
-                    <div class="button-group">
-                        <button type="submit" class="btn btn-add"><i class="fas fa-plus"></i> Add</button>
-                        <button type="button" class="btn btn-update"><i class="fas fa-edit"></i> Update</button>
-                        <button type="button" class="btn btn-delete"><i class="fas fa-trash"></i> Delete</button>
-                    </div>
-                </form>
-            </div>
             <div class="col-md-7">
                 <div class="table-container">
                     <%

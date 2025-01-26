@@ -19,10 +19,9 @@
     <link rel="icon" href="css/assets/web_icon.png">
 </head>
 <body>
-<!-- Navigation bar remains the same as index.jsp -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="index.jsp">
+        <a class="navbar-brand" href="jsp/index.jsp">
             <i class="fas fa-paw me-2"></i>PawMart
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -33,36 +32,142 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.jsp">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="product-save.jsp">Products</a>
+                <li class="nav-item dropdown">
+                    <a
+                            class="nav-link dropdown-toggle"
+                            href="admin-list.jsp"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                    >
+                        Admin
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a
+                                    class="dropdown-item"
+                                    href="admin-save.jsp"
+                            >Registered Admin</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                    class="dropdown-item"
+                                    href="admin-update.jsp"
+                            >Update Customer</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                    class="dropdown-item"
+                                    href="admin-delete.jsp"
+                            >Remove Customer</a
+                            >
+                        </li>
+
+                        <li><hr class="dropdown-divider" /></li>
+                        <li>
+                            <a
+                                    class="dropdown-item"
+                                    href="admin-list.jsp"
+                            >View Customer</a
+                            >
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="categories-save.jsp">Categories</a>
+                    <a class="nav-link" href="customer-list.jsp">Customer</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a
+                            class="nav-link dropdown-toggle"
+                            href="product-list.jsp"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                    >
+                        Product
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a
+                                    class="dropdown-item"
+                                    href="product-save.jsp"
+                            >Add Product</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                    class="dropdown-item"
+                                    href="product-update.jsp"
+                            >Update Product</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                    class="dropdown-item"
+                                    href="product-delete.jsp"
+                            >Remove Product</a
+                            >
+                        </li>
+
+                        <li><hr class="dropdown-divider" /></li>
+                        <li>
+                            <a
+                                    class="dropdown-item"
+                                    href="product-list.jsp"
+                            >View Product</a
+                            >
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a
+                            class="nav-link dropdown-toggle"
+                            href="category-list.jsp"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                    >
+                        Category
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a
+                                    class="dropdown-item"
+                                    href="categories-save.jsp"
+                            >Add Category</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                    class="dropdown-item"
+                                    href="category-update.jsp"
+                            >Update Category</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                    class="dropdown-item"
+                                    href="category-delete.jsp"
+                            >Remove Category</a
+                            >
+                        </li>
+
+                        <li><hr class="dropdown-divider" /></li>
+                        <li>
+                            <a
+                                    class="dropdown-item"
+                                    href="category-list.jsp"
+                            >View Category</a
+                            >
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.jsp">About Us</a>
+                    <a class="nav-link" href="adminDashboard.jsp">Orders</a>
                 </li>
             </ul>
-            <div class="d-flex align-items-center">
-                <div class="position-relative me-3">
-                                    <a href="#" class="text-dark">
-                                        <i class="fas fa-heart fa-lg"></i>
-                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                            0
-                                            <span class="visually-hidden">Favorite items</span>
-                                        </span>
-                                    </a>
-                                </div>
-                <div class="position-relative me-4">
-                                    <a href="#" class="text-dark">
-                                        <i class="fas fa-shopping-cart fa-lg"></i>
-                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
-                                            0
-                                            <span class="visually-hidden">Cart items</span>
-                                        </span>
-                                    </a>
-                                </div>
-            </div>
         </div>
     </div>
 </nav>

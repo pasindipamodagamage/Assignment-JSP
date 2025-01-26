@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "AdminAllServlet", value = "/admin-list")
-public class AdminLoadServlet extends HttpServlet {
+public class AdminAllServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<AdminTM> adminList = new ArrayList<>();
