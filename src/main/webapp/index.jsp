@@ -194,32 +194,32 @@
             </div>
             <div class="modal-body">
                 <!-- Social Login Options -->
-<%--                <div class="social-login mb-4">--%>
-<%--                    <p class="text-center mb-3">Sign up with:</p>--%>
-<%--                    <div class="d-flex justify-content-center gap-3 mb-3">--%>
-<%--                        <a href="" class="btn btn-google w-100">--%>
-<%--                            <i class="fab fa-google me-2"></i>Google--%>
-<%--                        </a>--%>
-<%--                        <a href="#" class="btn btn-facebook w-100">--%>
-<%--                            <i class="fab fa-facebook-f me-2"></i>Facebook--%>
-<%--                        </a>--%>
-<%--                    </div>--%>
-<%--                    <a href="#" class="btn btn-email w-100 mb-3">--%>
-<%--                        <i class="fas fa-envelope me-2"></i>Sign up with Email--%>
-<%--                    </a>--%>
-<%--                    <div class="divider"><span>OR</span></div>--%>
-<%--                </div>--%>
+                <%--                <div class="social-login mb-4">--%>
+                <%--                    <p class="text-center mb-3">Sign up with:</p>--%>
+                <%--                    <div class="d-flex justify-content-center gap-3 mb-3">--%>
+                <%--                        <a href="" class="btn btn-google w-100">--%>
+                <%--                            <i class="fab fa-google me-2"></i>Google--%>
+                <%--                        </a>--%>
+                <%--                        <a href="#" class="btn btn-facebook w-100">--%>
+                <%--                            <i class="fab fa-facebook-f me-2"></i>Facebook--%>
+                <%--                        </a>--%>
+                <%--                    </div>--%>
+                <%--                    <a href="#" class="btn btn-email w-100 mb-3">--%>
+                <%--                        <i class="fas fa-envelope me-2"></i>Sign up with Email--%>
+                <%--                    </a>--%>
+                <%--                    <div class="divider"><span>OR</span></div>--%>
+                <%--                </div>--%>
 
                 <!-- Registration Form -->
                 <form id="registerForm" action="register-servlet" method="post">
                     <div class="row">
-<%--                        <div class="col-md-6 mb-3">--%>
-<%--                            <label for="registerId" class="form-label">ID</label>--%>
-<%--                            <div class="input-group">--%>
-<%--                                <span class="input-group-text"><i class="fas fa-id-card"></i></span>--%>
-<%--                                <input type="text" class="form-control" id="registerId" required>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
+                        <%--                        <div class="col-md-6 mb-3">--%>
+                        <%--                            <label for="registerId" class="form-label">ID</label>--%>
+                        <%--                            <div class="input-group">--%>
+                        <%--                                <span class="input-group-text"><i class="fas fa-id-card"></i></span>--%>
+                        <%--                                <input type="text" class="form-control" id="registerId" required>--%>
+                        <%--                            </div>--%>
+                        <%--                        </div>--%>
                         <div class="col-md-6 mb-3">
                             <label for="registerName" class="form-label">Full Name</label>
                             <div class="input-group">
@@ -261,13 +261,13 @@
                                 <input type="password"  name="password" class="form-control" id="registerPassword" required>
                             </div>
                         </div>
-<%--                        <div class="col-md-6 mb-3">--%>
-<%--                            <label for="confirmPassword" class="form-label">Confirm Password</label>--%>
-<%--                            <div class="input-group">--%>
-<%--                                <span class="input-group-text"><i class="fas fa-lock"></i></span>--%>
-<%--                                <input type="password" name="password" class="form-control" id="confirmPassword" required>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
+                        <%--                        <div class="col-md-6 mb-3">--%>
+                        <%--                            <label for="confirmPassword" class="form-label">Confirm Password</label>--%>
+                        <%--                            <div class="input-group">--%>
+                        <%--                                <span class="input-group-text"><i class="fas fa-lock"></i></span>--%>
+                        <%--                                <input type="password" name="password" class="form-control" id="confirmPassword" required>--%>
+                        <%--                            </div>--%>
+                        <%--                        </div>--%>
                     </div>
 
                     <button type="submit" class="btn btn-primary w-100">Create Account</button>

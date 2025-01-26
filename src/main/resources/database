@@ -18,7 +18,8 @@ create table customer(
     position varchar(20) default 'a_customer',
     contact int(10),
     userName varchar(50),
-    password varchar(50)
+    password varchar(50),
+    status boolean
 );
 create table category(
     id varchar(10) primary key,

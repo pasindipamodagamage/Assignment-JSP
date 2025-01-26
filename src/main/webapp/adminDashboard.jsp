@@ -71,10 +71,10 @@
                         <label class="form-label">Email</label>
                         <input type="email" name="email" class="form-control" required>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Position</label>
-                        <input type="text" class="form-control" value="admin" readonly>
-                    </div>
+                    <%--                    <div class="mb-3">--%>
+                    <%--                        <label class="form-label">Position</label>--%>
+                    <%--                        <input type="text" class="form-control" value="admin" readonly>--%>
+                    <%--                    </div>--%>
                     <div class="mb-3">
                         <label class="form-label">Contact</label>
                         <input type="tel" name="contact" class="form-control" required>
@@ -94,44 +94,44 @@
                     </div>
                 </form>
             </div>
-                        <div class="col-md-7">
-                            <div class="table-container">
-                                <%
-                                    List<AdminDTO> adminDataList = (List<AdminDTO>) request.getAttribute("admins");
-                                    if (adminDataList != null && !adminDataList.isEmpty()) {
-                                %>
-                                <table id="customer-table" class="table table-hover">
-                                    <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Contact</th>
-                                        <th>Username</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <% for (AdminDTO adminDTO : adminDataList) {%>
-                                    <tr>
-                                        <td><%= adminDTO.getId()%>
-                                        </td>
-                                        <td><%= adminDTO.getName()%>
-                                        </td>
-                                        <td><%= adminDTO.getEmail()%>>
-                                        </td>
-                                        <td><%= adminDTO.getContact()%>>
-                                        </td>
-                                        <td><%= adminDTO.getUserName()%>>
-                                        </td>
-                                    </tr>
-                                    <%}%>
-                                    </tbody>
-                                </table>
-                                <%
-                                    }
-                                %>
-                            </div>
-                        </div>
+            <%--                        <div class="col-md-7">--%>
+            <%--                            <div class="table-container">--%>
+            <%--                                <%--%>
+            <%--                                    List<AdminDTO> adminDataList = (List<AdminDTO>) request.getAttribute("admins");--%>
+            <%--                                    if (adminDataList != null && !adminDataList.isEmpty()) {--%>
+            <%--                                %>--%>
+            <%--                                <table id="customer-table" class="table table-hover">--%>
+            <%--                                    <thead>--%>
+            <%--                                    <tr>--%>
+            <%--                                        <th>ID</th>--%>
+            <%--                                        <th>Name</th>--%>
+            <%--                                        <th>Email</th>--%>
+            <%--                                        <th>Contact</th>--%>
+            <%--                                        <th>Username</th>--%>
+            <%--                                    </tr>--%>
+            <%--                                    </thead>--%>
+            <%--                                    <tbody>--%>
+            <%--                                    <% for (AdminDTO adminDTO : adminDataList) {%>--%>
+            <%--                                    <tr>--%>
+            <%--                                        <td><%= adminDTO.getId()%>--%>
+            <%--                                        </td>--%>
+            <%--                                        <td><%= adminDTO.getName()%>--%>
+            <%--                                        </td>--%>
+            <%--                                        <td><%= adminDTO.getEmail()%>>--%>
+            <%--                                        </td>--%>
+            <%--                                        <td><%= adminDTO.getContact()%>>--%>
+            <%--                                        </td>--%>
+            <%--                                        <td><%= adminDTO.getUserName()%>>--%>
+            <%--                                        </td>--%>
+            <%--                                    </tr>--%>
+            <%--                                    <%}%>--%>
+            <%--                                    </tbody>--%>
+            <%--                                </table>--%>
+            <%--                                <%--%>
+            <%--                                    }--%>
+            <%--                                %>--%>
+            <%--                            </div>--%>
+            <%--                        </div>--%>
         </div>
     </section>
 
@@ -171,11 +171,11 @@
                         <label class="form-label">Password</label>
                         <input type="password" name="password" class="form-control" required>
                     </div>
-                    <div class="button-group">
-                        <button type="submit" class="btn btn-add"><i class="fas fa-plus"></i> Add</button>
-                        <button type="button" class="btn btn-update"><i class="fas fa-edit"></i> Update</button>
-                        <button type="button" class="btn btn-delete"><i class="fas fa-trash"></i> Delete</button>
-                    </div>
+                    <%--                    <div class="button-group">--%>
+                    <%--                        <button type="submit" class="btn btn-add"><i class="fas fa-plus"></i> Add</button>--%>
+                    <%--                        <button type="button" class="btn btn-update"><i class="fas fa-edit"></i> Update</button>--%>
+                    <%--                        <button type="button" class="btn btn-delete"><i class="fas fa-trash"></i> Delete</button>--%>
+                    <%--                    </div>--%>
                 </form>
             </div>
             <div class="col-md-7">

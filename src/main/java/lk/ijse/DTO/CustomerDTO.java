@@ -21,4 +21,5 @@ public class CustomerDTO {
     private String contact;
     private String userName;
     private String password;
+    private boolean status;
 }

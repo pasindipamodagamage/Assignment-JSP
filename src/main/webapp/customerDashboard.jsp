@@ -42,26 +42,26 @@
                 </li>
             </ul>
             <div class="d-flex align-items-center">
-                                <div class="position-relative me-3">
-                                    <a href="#" class="text-dark">
-                                        <i class="fas fa-heart fa-lg"></i>
-                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                <div class="position-relative me-3">
+                    <a href="#" class="text-dark">
+                        <i class="fas fa-heart fa-lg"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                             0
                                             <span class="visually-hidden">Favorite items</span>
                                         </span>
-                                    </a>
-                                </div>
-                                <div class="position-relative me-4">
-                                    <a href="#" class="text-dark">
-                                        <i class="fas fa-shopping-cart fa-lg"></i>
-                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+                    </a>
+                </div>
+                <div class="position-relative me-4">
+                    <a href="#" class="text-dark">
+                        <i class="fas fa-shopping-cart fa-lg"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
                                             0
                                             <span class="visually-hidden">Cart items</span>
                                         </span>
-                                    </a>
-                                </div>
-<%--                <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>--%>
-<%--                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>--%>
+                    </a>
+                </div>
+                <%--                <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>--%>
+                <%--                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>--%>
             </div>
         </div>
     </div>
