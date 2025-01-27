@@ -16,9 +16,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class ProductTM extends ProductDTO {
     private String id;
-    private String categoryId;
     private String description;
     private Double unitPrice;
     private int qtyOnHand;
-    private String imgUrl;
 }
