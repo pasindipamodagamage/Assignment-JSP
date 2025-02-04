@@ -79,12 +79,12 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="customer-list.jsp">Customer</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/customer-list">Customer</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a
                             class="nav-link dropdown-toggle"
-                            href="product-list.jsp"
+                            href="${pageContext.request.contextPath}/product-list"
                             role="button"
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
@@ -118,7 +118,7 @@
                         <li>
                             <a
                                     class="dropdown-item"
-                                    href="product-list.jsp"
+                                    href="${pageContext.request.contextPath}/product-list"
                             >View Product</a
                             >
                         </li>
@@ -127,7 +127,7 @@
                 <li class="nav-item dropdown">
                     <a
                             class="nav-link dropdown-toggle"
-                            href="category-list.jsp"
+                            href="${pageContext.request.contextPath}/category-list"
                             role="button"
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
@@ -161,7 +161,7 @@
                         <li>
                             <a
                                     class="dropdown-item"
-                                    href="category-list.jsp"
+                                    href="category-list"
                             >View Category</a
                             >
                         </li>

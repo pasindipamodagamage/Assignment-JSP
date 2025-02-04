@@ -32,11 +32,11 @@
                     <a class="nav-link" href="index.jsp">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="product-save.jsp">Products</a>
+                    <a class="nav-link" href="#products">Products</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="categories-save.jsp">Categories</a>
-                </li>
+<%--                <li class="nav-item">--%>
+<%--                    <a class="nav-link" href="#categories-section">Categories</a>--%>
+<%--                </li>--%>
                 <li class="nav-item">
                     <a class="nav-link" href="about.jsp">About Us</a>
                 </li>
@@ -58,69 +58,72 @@
     </div>
 </section>
 
+<%--Product Section--%>
+
+
 <!-- Categories Section -->
-<section class="py-5" id="categories-section">
-    <div class="container">
-        <!-- Main categories view -->
-        <div class="main-categories" id="mainCategories">
-            <h2 class="text-center mb-4">Shop by Category</h2>
-            <div class="row g-4">
-                <div class="col-md-3">
-                    <div class="card category-card" data-category="pet-food">
-                        <img src="css/assets/food.jpeg" alt="pet-food" class="card-img-top">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Pet Food & Treats</h5>
-                        </div>
-                    </div>
-                </div>
-                <!-- Additional category cards... -->
-            </div>
-        </div>
+<%--<section class="py-5" id="categories-section">--%>
+<%--    <div class="container">--%>
+<%--        <!-- Main categories view -->--%>
+<%--&lt;%&ndash;        <div class="main-categories" id="mainCategories">&ndash;%&gt;--%>
+<%--&lt;%&ndash;            <h2 class="text-center mb-4">Shop by Category</h2>&ndash;%&gt;--%>
+<%--&lt;%&ndash;&lt;%&ndash;            <div class="row g-4">&ndash;%&gt;&ndash;%&gt;--%>
+<%--&lt;%&ndash;&lt;%&ndash;                <div class="col-md-3">&ndash;%&gt;&ndash;%&gt;--%>
+<%--&lt;%&ndash;&lt;%&ndash;                    <div class="card category-card" data-category="pet-food">&ndash;%&gt;&ndash;%&gt;--%>
+<%--&lt;%&ndash;&lt;%&ndash;                        <img src="css/assets/food.jpeg" alt="pet-food" class="card-img-top">&ndash;%&gt;&ndash;%&gt;--%>
+<%--&lt;%&ndash;&lt;%&ndash;                        <div class="card-body text-center">&ndash;%&gt;&ndash;%&gt;--%>
+<%--&lt;%&ndash;&lt;%&ndash;                            <h5 class="card-title">Pet Food & Treats</h5>&ndash;%&gt;&ndash;%&gt;--%>
+<%--&lt;%&ndash;&lt;%&ndash;                        </div>&ndash;%&gt;&ndash;%&gt;--%>
+<%--&lt;%&ndash;&lt;%&ndash;                    </div>&ndash;%&gt;&ndash;%&gt;--%>
+<%--&lt;%&ndash;&lt;%&ndash;                </div>&ndash;%&gt;&ndash;%&gt;--%>
+<%--&lt;%&ndash;&lt;%&ndash;                <!-- Additional category cards... -->&ndash;%&gt;&ndash;%&gt;--%>
+<%--&lt;%&ndash;&lt;%&ndash;            </div>&ndash;%&gt;&ndash;%&gt;--%>
+<%--&lt;%&ndash;        </div>&ndash;%&gt;--%>
 
-        <!-- Sub-categories views -->
-        <div class="sub-categories d-none" id="subCategories">
-            <div class="d-flex align-items-center mb-4">
-                <button class="btn btn-link back-button me-3">
-                    <i class="fas fa-arrow-left"></i> Back to Categories
-                </button>
-            </div>
+<%--        <!-- Sub-categories views -->--%>
+<%--        <div class="sub-categories d-none" id="subCategories">--%>
+<%--            <div class="d-flex align-items-center mb-4">--%>
+<%--                <button class="btn btn-link back-button me-3">--%>
+<%--                    <i class="fas fa-arrow-left"></i> Back to Categories--%>
+<%--                </button>--%>
+<%--            </div>--%>
 
-            <!-- Pet Food Sub-categories -->
-            <div class="category-products d-none" id="pet-food-products">
-                <h2 class="text-center mb-4">Pet Food & Treats</h2>
-                <div class="row g-4">
-                    <div class="col-md-3">
-                        <div class="card product-card">
-                            <img src="css/assets/dog-food.jpeg" alt="dog-food" class="card-img-top">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Dog Food</h5>
-                                <p class="card-text">Premium dry dog food</p>
-                                <div class="d-flex justify-content-between align-items-center mt-3">
-                                    <span class="price">Rs. 2500</span>
-                                    <button class="btn btn-primary btn-sm">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<%--            <!-- Pet Food Sub-categories -->--%>
+<%--            <div class="category-products d-none" id="pet-food-products">--%>
+<%--                <h2 class="text-center mb-4">Pet Food & Treats</h2>--%>
+<%--                <div class="row g-4">--%>
+<%--                    <div class="col-md-3">--%>
+<%--                        <div class="card product-card">--%>
+<%--                            <img src="css/assets/dog-food.jpeg" alt="dog-food" class="card-img-top">--%>
+<%--                            <div class="card-body text-center">--%>
+<%--                                <h5 class="card-title">Dog Food</h5>--%>
+<%--                                <p class="card-text">Premium dry dog food</p>--%>
+<%--                                <div class="d-flex justify-content-between align-items-center mt-3">--%>
+<%--                                    <span class="price">Rs. 2500</span>--%>
+<%--                                    <button class="btn btn-primary btn-sm">Add to Cart</button>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
 
-                    <div class="col-md-3">
-                        <div class="card product-card">
-                            <img src="css/assets/food.jpeg" alt="cat-food" class="card-img-top">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Cat Food</h5>
-                                <p class="card-text">Premium cat food</p>
-                                <div class="d-flex justify-content-between align-items-center mt-3">
-                                    <span class="price">Rs. 2200</span>
-                                    <button class="btn btn-primary btn-sm">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<%--                    <div class="col-md-3">--%>
+<%--                        <div class="card product-card">--%>
+<%--                            <img src="css/assets/food.jpeg" alt="cat-food" class="card-img-top">--%>
+<%--                            <div class="card-body text-center">--%>
+<%--                                <h5 class="card-title">Cat Food</h5>--%>
+<%--                                <p class="card-text">Premium cat food</p>--%>
+<%--                                <div class="d-flex justify-content-between align-items-center mt-3">--%>
+<%--                                    <span class="price">Rs. 2200</span>--%>
+<%--                                    <button class="btn btn-primary btn-sm">Add to Cart</button>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</section>--%>
 
 <!-- Features Section -->
 <section class="bg-light py-5">

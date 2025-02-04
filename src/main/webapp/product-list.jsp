@@ -6,6 +6,9 @@
   Time: 12:22 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%
+    List<ProductTM> productDataList = (List<ProductTM>) request.getAttribute("products");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -115,7 +118,7 @@
                         <li>
                             <a
                                     class="dropdown-item"
-                                    href="product-list.jsp"
+                                    href="${pageContext.request.contextPath}/product-list"
                             >View Product</a
                             >
                         </li>
@@ -183,7 +186,6 @@
             <div class="col-md-7">
                 <div class="table-container">
                     <%
-                        List<ProductTM> productDataList = (List<ProductTM>) request.getAttribute("products");
                         if (productDataList != null && !productDataList.isEmpty()) {
                     %>
                     <table class="table table-hover">
@@ -211,9 +213,9 @@
                         <%}%>
                         </tbody>
                     </table>
-                    <%
-                        }
-                    %>
+                    <% } else { %>
+                    <p class="text-center text-muted">No Product found.</p>
+                    <% } %>
                 </div>
             </div>
         </div>

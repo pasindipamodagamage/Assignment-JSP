@@ -1,10 +1,14 @@
-<%--
+<%@ page import="lk.ijse.DTO.EntityTM.ProductTM" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: pasindi
   Date: 1/21/25
   Time: 12:22 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%
+    List<ProductTM> productDataList = (List<ProductTM>) request.getAttribute("products");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,68 +80,53 @@
     </div>
 </section>
 
-<!-- Categories Section -->
-<section class="py-5" id="categories-section">
-    <div class="container">
-        <!-- Main categories view -->
-        <div class="main-categories" id="mainCategories">
-            <h2 class="text-center mb-4">Shop by Category</h2>
-            <div class="row g-4">
-                <!-- main Category -->
-                <div class="col-md-3">
-                    <div class="card category-card" data-category="pet-food">
-                        <img src="css/assets/food.jpeg" alt="pet-food" class="card-img-top">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Pet Food & Treats</h5>
-                        </div>
+<section class="Card">
+    <div class="container mt-5">
+        <br>
+        <h2 class="text-center mb-4">Shop to Products</h2>
+        <div class="row">
+            <% if (productDataList != null && !productDataList.isEmpty()) { %>
+            <% for (ProductTM productTm : productDataList) { %>
+            <div class="col-md-4 col-lg-3 mb-4">
+                <div class="card product-card shadow-sm position-relative">
+                    <div class="card-img-wrapper overflow-hidden">
+                        <img src= "asesst/<%= productTm.getImgUrl() %>" class="card-img-top product-image">
                     </div>
-                </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold"><%= productTm.getDescription() %></h5>
+                        <p class="card-text text-muted">Price: $<%= productTm.getUnitPrice() %></p>
+                        <p class="card-text small text-truncate">Description: <%= productTm.getDescription() %></p>
 
-            </div>
-        </div>
-
-        <!-- Sub-categories views (initially hidden) -->
-        <div class="sub-categories d-none" id="subCategories">
-            <div class="d-flex align-items-center mb-4">
-                <button class="btn btn-link back-button me-3">
-                    <i class="fas fa-arrow-left"></i> Back to Categories
-                </button>
-                <h2 class="category-title mb-0">Category Name</h2>
-            </div>
-
-            <!-- Pet Food Sub-categories (initially hidden) -->
-            <div class="category-products d-none" id="pet-food-products">
-                <div class="row g-4">
-                    <div class="col-md-3">
-                        <div class="card product-card">
-                            <img src="css/assets/dog-food.jpeg" alt="dog-food" class="card-img-top">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Dog Food</h5>
-                                <p class="card-text">Premium dry dog food</p>
+                        <form action="/AddToCartServlet" method="post">
+                            <div class="quantity-wrapper mb-3 d-flex justify-content-center align-items-center">
+                                <label for="quantity_<%= productTm.getId() %>" class="me-2">Qty:</label>
+                                <input type="number" id="quantity_<%= productTm.getId() %>"
+                                       name="quantity"
+                                       class="form-control text-center quantity-input"
+                                       style="width: 100px;"
+                                       min="1"
+                                       max="<%= productTm.getQtyOnHand() %>"
+                                       required>
                             </div>
-                        </div>
+                            <p class="card-text small text-muted">Available Stock: <%= productTm.getQtyOnHand() %></p>
+                            <p class="card-text small text-muted">Category: <%= productTm.getCategoryId() %></p>
+                            <input type="hidden" name="productName" value="<%= productTm.getDescription() %>">
+                            <input type="hidden" name="productPrice" value="<%= productTm.getUnitPrice() %>">
+                            <button type="submit" class="btn btn-primary w-100 add-to-cart-btn">Add to Cart</button>
+                        </form>
                     </div>
                 </div>
             </div>
-
-            <!-- Toys Sub-categories (initially hidden) -->
-            <div class="category-products d-none" id="toys-products">
-                <div class="row g-4">
-                    <div class="col-md-3">
-                        <div class="card product-card">
-                            <img src="css/assets/dog-toys.jpeg" alt="dog-toys" class="card-img-top">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Dog Toys</h5>
-                                <p class="card-text">Interactive dog toys</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add more toy products -->
-                </div>
+            <% } %>
+            <% } else { %>
+            <div class="col-12">
+                <p class="text-center text-muted">No products available.</p>
             </div>
+            <% } %>
         </div>
     </div>
 </section>
+
 
 <!-- Features Section -->
 <section class="bg-light py-5">
